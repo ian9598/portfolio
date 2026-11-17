@@ -54,6 +54,11 @@
     border-radius: 1px;
   }
 
+  /* R-39: a pressed state that is not colour alone */
+  :where(a, button, input[type='submit']):active {
+    transform: translateY(1px);
+  }
+
   ::selection {
     background: var(--color-accent);
     color: #ffffff;

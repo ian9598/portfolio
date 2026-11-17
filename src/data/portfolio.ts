@@ -120,9 +120,7 @@ export const portfolio = {
       company: 'HOMICO SDN BHD',
       role: 'PHP Software Engineer',
       period: 'April 2022 – May 2022',
-      highlights: [
-        'Develop website using WordPress and work closely with the UI/UX team for the design.',
-      ],
+      highlights: [],
       subSections: [
         {
           title: 'Laravel Framework',
@@ -174,16 +172,16 @@ export const portfolio = {
       tags: ['PHP', 'Laravel', 'JWT', 'REST API', 'Swagger'],
     },
     {
-      title: 'WordPress & Laravel Development',
+      title: 'Laravel Feature Development',
       description:
-        'Full-stack web development using WordPress for front-end sites and Laravel for feature-rich sub-modules with AJAX-powered data retrieval.',
+        'Feature work on an existing Laravel system, from bug fixes through new sub-modules wired into an existing API.',
       features: [
-        'WordPress site development with UI/UX team collaboration',
-        'Laravel sub-module creation with API integration',
-        'AJAX remote data search for optimized response times',
+        'Bug fixes and feature work across frontend and backend',
+        'New sub-modules built on existing API integration',
+        'AJAX remote data search for faster response times',
         'GitLab workflow (pull/push/merge)',
       ],
-      tags: ['WordPress', 'Laravel', 'AJAX', 'jQuery', 'GitLab'],
+      tags: ['Laravel', 'AJAX', 'jQuery', 'GitLab'],
     },
   ] satisfies Project[],
 

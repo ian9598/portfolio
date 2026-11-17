@@ -237,4 +237,4 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export const resumePath = `${base}/resume/Muhammad-Safiyan-Roslan-Resume.pdf`;
 export const faviconPath = `${base}/favicon.svg`;
-export const portraitPath = `${base}/images/portrait.jpg`;
+export const portraitPath = `${base}/images/portrait.png`;

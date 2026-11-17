@@ -141,7 +141,7 @@ export const portfolio = {
     {
       title: 'Hospital Management System (HMS)',
       description:
-        'A comprehensive HMS powering multiple hospital modules — Laboratory, Radiology, and Medical Records — with HL7-based data exchange to external systems.',
+        'A comprehensive HMS powering multiple hospital modules (Laboratory, Radiology, Medical Records) with HL7-based data exchange to external systems.',
       features: [
         'Modular architecture covering Lab, Radiology & Medical Records',
         'HL7 ORM/ORU/ACK message integration with LabLink & Philips Vue PACS',
@@ -209,15 +209,15 @@ export const portfolio = {
   ],
 
   certifications: [
-    { title: 'Participant — Laravel Training (Iverson Associates)', year: '2026' },
+    { title: 'Participant: Laravel Training (Iverson Associates)', year: '2026' },
     {
       title:
-        "Participant & Presenter — Seminar on Information Retrieval and Knowledge Management (SIRKM'20)",
+        "Participant & Presenter: Seminar on Information Retrieval and Knowledge Management (SIRKM'20)",
       year: '2020',
     },
-    { title: 'Participant — MDEC-Intel® AI Academy', year: '2019' },
-    { title: 'Participant — Training of Trainers', year: '2017' },
-    { title: 'Tutor — Tutor and Tutee Program', year: '2017' },
+    { title: 'Participant: MDEC-Intel® AI Academy', year: '2019' },
+    { title: 'Participant: Training of Trainers', year: '2017' },
+    { title: 'Tutor: Tutor and Tutee Program', year: '2017' },
     {
       title: "Dean's Award (Semester 3, 5 & 6) and Vice Chancellor's Award (Diploma)",
       year: null,
@@ -239,3 +239,4 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 export const resumePath = `${base}/resume/Muhammad-Safiyan-Roslan-Resume.pdf`;
 export const faviconPath = `${base}/favicon.svg`;
+export const portraitPath = `${base}/images/portrait.jpg`;

@@ -1,79 +1,99 @@
 @import 'tailwindcss';
 
+/*
+  Engineering ledger direction.
+  Paper ground, ink text, one oxide accent. Newsreader carries editorial voice,
+  IBM Plex Sans carries technical body copy, IBM Plex Mono is the ledger register
+  used only for dates and section numbers.
+*/
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --color-paper: #f6f3ec;
+  --color-surface: #efebe2;
+  --color-ink: #171512;
+  --color-muted: #6b6459;
+  --color-rule: #d8d2c4;
+  --color-accent: #a63d2f;
+  --color-accent-deep: #8a3125;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #334155;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #475569;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #34d399, #06b6d4, #818cf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(52, 211, 153, 0.1);
-}
-
-.timeline-line {
-  position: absolute;
-  left: 1.25rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #34d399, #06b6d4, transparent);
-}
-
-@media (prefers-reduced-motion: reduce) {
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
 
-  .reveal {
-    opacity: 1;
-    transform: none;
-    transition: none;
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
   }
 
-  .card-hover:hover {
-    transform: none;
+  /* R-39: enabled controls read as usable, disabled ones do not */
+  a[href],
+  button,
+  summary,
+  select,
+  label[for],
+  input[type='checkbox'],
+  input[type='radio'] {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  input:disabled {
+    cursor: not-allowed;
+  }
+
+  /* R-32: a focus indicator that survives on the paper ground */
+  :where(a, button, input, textarea, select, summary):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 1px;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Hairline that separates ledger entries */
+  .ledger-rule {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  /* Underline that thickens on hover, the only motion on the page */
+  .link-ink {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-rule);
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
+  }
+
+  .link-ink:hover {
+    color: var(--color-accent-deep);
+    text-decoration-color: currentColor;
   }
 }

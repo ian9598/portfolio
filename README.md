@@ -1,4 +1,4 @@
-# Portfolio (Static) — Muhammad Safiyan Roslan
+# Portfolio (Static): Muhammad Safiyan Roslan
 
 Static build of my portfolio, deployed to **GitHub Pages**. This is the deployable-anywhere twin of my [Laravel version](https://github.com/ian9598/myPortfolio).
 
@@ -9,15 +9,16 @@ Static build of my portfolio, deployed to **GitHub Pages**. This is the deployab
 | | Laravel version | This version |
 |---|---|---|
 | Stack | Laravel 12 + Blade | Astro 7 |
-| Hosting | Needs PHP hosting | Any static host — GitHub Pages, Netlify, Cloudflare Pages |
+| Hosting | Needs PHP hosting | Any static host such as GitHub Pages, Netlify, Cloudflare Pages |
 | Contact form | Server-side validation + email | Opens your mail client with the message pre-filled |
 | Content | `config/portfolio.php` | `src/data/portfolio.ts` |
 
 ## Stack
 
-- **Astro 7** — static site output, zero client framework
+- **Astro 7**: static site output, zero client framework
 - **Tailwind CSS v4** via the Vite plugin
-- Vanilla JS for the mobile menu, scroll reveal and navbar state
+- Vanilla JS for the mobile menu only (Escape closes it, focus returns to the trigger)
+- Engineering ledger design: paper ground, ink type, one oxide accent, no gradients or glow
 
 ## Local development
 
@@ -38,10 +39,10 @@ user site (`username.github.io`), set `base` to `/`.
 
 Everything lives in [`src/data/portfolio.ts`](src/data/portfolio.ts):
 
-- `personal` — name, title, tagline, summary, location, email, LinkedIn
+- `personal`: name, title, tagline, summary, location, email, LinkedIn
 - `skills` / `languages`
-- `experiences` — roles with nested highlight sections
-- `projects` — cards with features and tags
+- `experiences`: roles with nested highlight sections
+- `projects`: cards with features and tags
 - `education` / `certifications`
 
 Replace the downloadable resume at
